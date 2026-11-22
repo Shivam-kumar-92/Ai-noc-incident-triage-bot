@@ -1,0 +1,37 @@
+{
+  "events": [
+    {
+      "status": "DOWN",
+      "category": "DNS_FAILURE",
+      "osi_layer": "L7",
+      "severity": "SEV-2",
+      "target": "10.20.1.10 (erp.vendor-cloud.example)",
+      "summary": "Internal DNS resolver 10.20.1.10 returned SERVFAIL after 2012ms while public upstream 1.1.1.1 resolved erp.vendor-cloud.example cleanly in 19ms.",
+      "evidence": [
+        "10.20.1.10 -> erp.vendor-cloud.example: SERVFAIL (RCODE=2, 2012ms)",
+        "1.1.1.1 -> erp.vendor-cloud.example: NOERROR -> 203.0.113.42 (19ms)",
+        "Internal zone portal.corp.internal remains healthy (NOERROR, 4ms)"
+      ],
+      "metrics": {
+        "internal_rtt_ms": 2012,
+        "upstream_rtt_ms": 19
+      }
+    },
+    {
+      "status": "CRITICAL",
+      "category": "ARP_SPOOFING",
+      "osi_layer": "L2",
+      "severity": "SEV-1",
+      "target": "10.20.10.1 (VLAN 20 Gateway)",
+      "summary": "Unsolicited ARP replies flipped default gateway 10.20.10.1 MAC from 00:1b:21:aa:00:01 to rogue MAC de:ad:be:ef:66:09.",
+      "evidence": [
+        "Baseline gateway MAC: 00:1b:21:aa:00:01",
+        "Rogue unsolicited ARP reply MAC: de:ad:be:ef:66:09 (3 frames at 1s interval)"
+      ],
+      "metrics": {
+        "vlan": 20,
+        "conflicting_macs": ["00:1b:21:aa:00:01", "de:ad:be:ef:66:09"]
+      }
+    }
+  ]
+}
