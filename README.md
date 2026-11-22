@@ -1,5 +1,6 @@
 # AI-Powered NOC Incident Triage Bot
 
+[![CI](https://github.com/Shivam-kumar-92/Ai-noc-incident-triage-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/Shivam-kumar-92/Ai-noc-incident-triage-bot/actions/workflows/ci.yml)
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)
 ![Dependencies](https://img.shields.io/badge/runtime%20deps-zero%20(stdlib)-brightgreen)
 ![AI + Networking](https://img.shields.io/badge/Hybrid-NOC%20Forensics%20%2B%20Multi--Tier%20LLM-818CF8)
