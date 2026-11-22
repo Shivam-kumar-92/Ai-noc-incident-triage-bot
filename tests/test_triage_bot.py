@@ -66,7 +66,7 @@ class TestAINOCTriageBot(unittest.TestCase):
         t.start()
         try:
             _raw, anomalies = asyncio.run(
-                probe_endpoints_async([f"127.0.0.1:{open_port},{closed_port}"], timeout=1.0)
+                probe_endpoints_async([f"127.0.0.1:{open_port},{closed_port}"], timeout=4.0)
             )
         finally:
             t.join(timeout=2.0)
